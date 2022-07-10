@@ -9,4 +9,6 @@ main() {
 
   String frase2 = "$nome está $status pq tirou nota $nota!";
   print(frase2);
+
+  print("30 * 30 = ${30 * 30}");
 }
