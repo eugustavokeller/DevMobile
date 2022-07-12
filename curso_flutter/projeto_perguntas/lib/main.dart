@@ -6,15 +6,16 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp (
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.purple,
+        primarySwatch: Colors.deepPurple,
       ),
-      home: const MyHomePage(title: 'MyApp'),
+      home: const MyHomePage (title: 'App Gustavo'),
+      
     );
   }
 }
@@ -48,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'Teste Gustavo',
+              'Contador',
             ),
             Text(
               '$_counter',
