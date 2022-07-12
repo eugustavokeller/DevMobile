@@ -16,3 +16,5 @@ main() {
 
   print('Fim!');
 }
+
+// Diferença entre o While e o Do While é que o While é executado 0 ou infinito e o Do While será executado pelo menos 1 vez ou infinito.
