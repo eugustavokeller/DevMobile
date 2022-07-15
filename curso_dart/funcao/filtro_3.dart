@@ -19,4 +19,4 @@ main() {
   var nomes = ['Ana', 'Bia', 'Rebeca', 'Gui', 'Joao'];
   var nomesGrandesFn = (String nome) => nome.length >= 5;
   print(filtrar(nomes, nomesGrandesFn));
-}
+} 
