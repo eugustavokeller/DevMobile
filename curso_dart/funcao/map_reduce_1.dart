@@ -9,9 +9,9 @@ main() {
   };
 
 
-  String Function(Map) pegarApenasNome = (aluno) => aluno['nome'];
-  int Function(String) qtdeDeLetras = (texto) => texto.length;
-  int Function(int) dobro = (numero) => numero * 2;
+  String Function(Map) pegarApenasNome = (aluno) => aluno['nome']; // Criou Function Map que retorna tipo String
+  int Function(String) qtdeDeLetras = (texto) => texto.length; // Criou uma Function tipo String que retorna um int
+  int Function(int) dobro = (numero) => numero * 2; // Criou uma Function int que retorna tipo int
   var resultado = alunos
     .map(pegarApenasNome)
     .map(qtdeDeLetras)
