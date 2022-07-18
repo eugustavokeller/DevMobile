@@ -3,7 +3,7 @@ class Carro {
   final int velocidadeMax = 280;
   int velocidadeAtual = 0;
 
-  acelerar() {
+  acelerar(velocidadeAtual, velocidadeMax) {
     print('A velocidade antes de acelerar é: $velocidadeAtual.');
     while(velocidadeAtual < velocidadeMax) {
       return velocidadeAtual += 5;
