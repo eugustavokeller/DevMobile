@@ -3,7 +3,6 @@ class Data {
   int mes = 0;
   int ano = 0;
 
-
   // Data(int dia, int mes, int ano) {
   //   this.dia = dia;
   //   this.mes = mes;
