@@ -6,5 +6,3 @@ main() {
   fiesta.velocidadeAtual = 0;
     
 }
-
-acelerar
