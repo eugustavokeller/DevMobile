@@ -8,5 +8,12 @@ main() {
   }
 
   print('O carro chegou no máximo com velocidade ${fiesta.velocidadeAtual} Km/h.');
+
+  while(fiesta.velocidadeAtual > 0) {
+    print('A velocidade atual é: ${fiesta.frear()} Km/h.');
+  }
+
+  print('O carro parou com velocidade: ${fiesta.velocidadeAtual}.');
       
 }
+
