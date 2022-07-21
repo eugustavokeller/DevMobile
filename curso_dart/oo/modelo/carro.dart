@@ -14,7 +14,7 @@ class Carro {
     if(deltaValido && novaVelocidade >= 0) {
       this._velocidadeAtual = novaVelocidade;
     }
-  }
+  } 
 
   int acelerar() {
     if(_velocidadeAtual + 5 >= velocidadeMax) {
