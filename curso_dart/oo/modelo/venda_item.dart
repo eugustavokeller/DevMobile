@@ -5,11 +5,11 @@ class VendaItem {
   int quantidade;
   double _preco = 0;
 
-  VendaItem({required this.produto, this.quantidade = 1});
+  VendaItem({this.produto, this.quantidade = 1});
 
   double get preco {
     if(produto != null && _preco == null) {
-      _preco = preco.precoComDesconto;
+      _preco = produto.precoComDesconto;
     }
     return _preco;
   }
