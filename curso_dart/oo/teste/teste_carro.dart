@@ -13,6 +13,9 @@ main() {
     print('A velocidade atual é: ${fiesta.frear()} Km/h.');
   }
 
+
+  fiesta.velocidadeAtual = 500;
+  fiesta.velocidadeAtual = 3;
   print('O carro parou com velocidade: ${fiesta.velocidadeAtual}.');
       
 }
