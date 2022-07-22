@@ -5,7 +5,7 @@ class VendaItem {
   int quantidade;
   double _preco = 0;
 
-  VendaItem({this.produto, this.quantidade = 1});
+  VendaItem({required this.produto, this.quantidade = 1});
 
   double get preco {
     if(produto != null && _preco == null) {

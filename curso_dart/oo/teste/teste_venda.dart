@@ -40,5 +40,5 @@ main() {
     ]
   );
 
-  print("O valor total da venda é: ${venda.valorTotal}.");
+  print("O valor total da venda é: ${venda.valorTotal}");
 }

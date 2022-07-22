@@ -2,6 +2,6 @@ class Cliente {
   String nome;
   String cpf;
 
-  Cliente({this.nome, this.cpf});
+  Cliente({required this.nome, required this.cpf});
 
 }
