@@ -41,6 +41,6 @@ main() {
   );
 
   print("O valor total da venda é: R\$${venda.valorTotal} reais.");
-  print("O nome do primeiro produto é: ${venda.itens[0].produto.nome}");
-  print("O CPG do cliente é: ${venda.cliente.cpf}.");
+  print("O nome do primeiro produto é: ${venda.itens[0].produto!.nome}");
+  print("O CPG do cliente é: ${venda.cliente!.cpf}.");
 }

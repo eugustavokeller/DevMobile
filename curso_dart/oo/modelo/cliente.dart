@@ -1,7 +1,7 @@
 class Cliente {
-  String nome;
-  String cpf;
+  String? nome;
+  String? cpf;
 
-  Cliente({required this.nome, required this.cpf});
+  Cliente({this.nome, this.cpf});
 
 }
