@@ -19,10 +19,26 @@ class _PerguntaAppState extends State<PerguntaApp> {
   @override
   Widget build(BuildContext context) {
     final perguntas = [
-      'Qual é a sua cor favorita?',
-      'Qual é o seu animal favorito?',
+      {
+        'texto': 'Qual sua cor favorita?',
+        'resposta': ['Preto', 'Vermelho', 'Verde', 'Branco'],
+      },
+      {
+        'texto': 'Qual seu animal favorito?',
+        'resposta': ['Coelho', 'Cobra', 'Elefante', 'Leão'],
+      },
+      {
+        'texto': 'Qual seu instrutor favorito?',
+        'resposta': ['Maria', 'João', 'Leo', 'Pedro'],
+      },
     ];
-    
+
+    List<Widget> respostas = [];
+
+    for(String textoResp in perguntas[_perguntaSelecionada].cast()['respostas']) {
+      respostas.add(Resposta(textoResp, _responder));
+    }
+
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -30,10 +46,8 @@ class _PerguntaAppState extends State<PerguntaApp> {
         ),
         body: Column(
           children: <Widget>[
-            Questao(perguntas[_perguntaSelecionada]),
-            Resposta('Resposta 1', _responder),
-            Resposta('Resposta 2', _responder),
-            Resposta('Resposta 3', _responder)
+            Questao(perguntas[_perguntaSelecionada]['texto'].toString()),
+            ...respostas,
           ],
         ),
       ),
@@ -41,9 +55,12 @@ class _PerguntaAppState extends State<PerguntaApp> {
   }
 }
 
-class PerguntaApp extends StatefulWidget{
-  
+class PerguntaApp extends StatefulWidget {
+  const PerguntaApp({Key? key}) : super(key: key);
+
+  @override
+  // ignore: library_private_types_in_public_api
   _PerguntaAppState createState() {
     return _PerguntaAppState();
-  }  
+  }
 }
