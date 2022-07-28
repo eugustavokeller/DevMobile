@@ -21,15 +21,15 @@ class _PerguntaAppState extends State<PerguntaApp> {
     final perguntas = [
       {
         'texto': 'Qual sua cor favorita?',
-        'resposta': ['Preto', 'Vermelho', 'Verde', 'Branco'],
+        'respostas': ['Preto', 'Vermelho', 'Verde', 'Branco'],
       },
       {
         'texto': 'Qual seu animal favorito?',
-        'resposta': ['Coelho', 'Cobra', 'Elefante', 'Leão'],
+        'respostas': ['Coelho', 'Cobra', 'Elefante', 'Leão'],
       },
       {
         'texto': 'Qual seu instrutor favorito?',
-        'resposta': ['Maria', 'João', 'Leo', 'Pedro'],
+        'respostas': ['Maria', 'João', 'Leo', 'Pedro'],
       },
     ];
 
@@ -56,10 +56,7 @@ class _PerguntaAppState extends State<PerguntaApp> {
 }
 
 class PerguntaApp extends StatefulWidget {
-  const PerguntaApp({Key? key}) : super(key: key);
-
-  @override
-  // ignore: library_private_types_in_public_api
+  
   _PerguntaAppState createState() {
     return _PerguntaAppState();
   }
