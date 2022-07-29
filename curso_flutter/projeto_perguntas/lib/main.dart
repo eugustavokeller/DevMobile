@@ -37,7 +37,7 @@ class _PerguntaAppState extends State<PerguntaApp> {
 
   @override
   Widget build(BuildContext context) {
-    List<String> respostas = temPerguntaSelecionada
+    var respostas = temPerguntaSelecionada
         ? _perguntas[_perguntaSelecionada]['respostas']
         : [];
 
@@ -53,7 +53,7 @@ class _PerguntaAppState extends State<PerguntaApp> {
                   ...respostas.map((t) => Resposta(t, _responder)).toList(),
                 ],
               )
-            : print('Parabens!'),
+            : [],
       ),
     );
   }
