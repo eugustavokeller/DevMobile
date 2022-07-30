@@ -37,8 +37,8 @@ class _PerguntaAppState extends State<PerguntaApp> {
 
   @override
   Widget build(BuildContext context) {
-    var respostas = temPerguntaSelecionada
-        ? _perguntas[_perguntaSelecionada]['respostas']
+    List<String> respostas = temPerguntaSelecionada
+        ? _perguntas[_perguntaSelecionada].cast()['respostas']
         : [];
 
     return MaterialApp(
@@ -49,11 +49,11 @@ class _PerguntaAppState extends State<PerguntaApp> {
         body: temPerguntaSelecionada
             ? Column(
                 children: <Widget>[
-                  Questao(_perguntas[_perguntaSelecionada]['texto'].toString()),
+                  Questao(_perguntas[_perguntaSelecionada].cast()['texto']),
                   ...respostas.map((t) => Resposta(t, _responder)).toList(),
                 ],
               )
-            : [],
+            : null,
       ),
     );
   }
