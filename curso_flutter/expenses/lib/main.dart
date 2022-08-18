@@ -1,3 +1,4 @@
+import 'package:expenses/components/transaction_list.dart';
 import 'package:expenses/models/transaction.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +12,10 @@ class ExpansesApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
+  
+  final titleController = TextEditingController();
+  final valueController = TextEditingController();
+  
   final _transactions = [
     Transaction(
       id: 't1',
@@ -34,7 +39,6 @@ class MyHomePage extends StatelessWidget {
         title: Text('Despesas Pessoais'),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Container(
@@ -44,61 +48,41 @@ class MyHomePage extends StatelessWidget {
               elevation: 5,
             ),
           ),
-          Column(
-            children: _transactions.map((tr) {
-              return Card(
-                child: Row(
-                  children: [
-                    Container(
-                      margin: EdgeInsets.symmetric(
-                        horizontal: 15,
-                        vertical: 10
-                      ),
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.purple,
-                          width: 2,
-                        )
-                      ),
-                      padding: EdgeInsets.all(10),
-                      child: Text(
-                        tr.value.toString(),
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          color: Colors.purple,
-                        ),
-                      ),
+          TransactionList(_transactions),
+          Card(
+            elevation: 5,
+            child: Padding(
+              padding: const EdgeInsets.all(10),
+              child: Column(
+                children: <Widget>[
+                  TextField(
+                    controller: titleController,
+                    decoration: InputDecoration(
+                      labelText: 'Título',
                     ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          child: Text(
-                            tr.title,
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                              color: Colors.black,
-                            ),
-                          ),
-                        ), 
-                        Container(
-                          child: Text(
-                            tr.date.toString(),
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 117, 117, 117),
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              );
-            }).toList(),
+                  ),
+                  TextField(
+                    controller: valueController,
+                    decoration: InputDecoration(
+                      labelText: 'Valor (R\$)',
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: <Widget>[
+                      FlatButton(
+                        child: Text('Nova transação'),
+                        textColor: Colors.purple,
+                        onPressed: () {
+                          print(titleController.text);
+                          print(valueController.text);
+                        },
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
           )
         ],
       ),
