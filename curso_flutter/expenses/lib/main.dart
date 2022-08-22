@@ -1,5 +1,8 @@
-import 'package:expenses/components/transaction_user.dart';
 import 'package:flutter/material.dart';
+import 'components/transaction_list.dart';
+import 'components/transaction_form.dart';
+import 'models/transaction.dart';
+import 'dart:math';
 
 main() => runApp(ExpansesApp());
 
@@ -12,7 +15,49 @@ class ExpansesApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+
+  final _transactions = [
+    Transaction(
+      id: 't1',
+      title: 'Novo Tênis de Corrida',
+      value: 310.76,
+      date: DateTime.now(),
+    ),
+    Transaction(
+      id: 't2',
+      title: 'Conta 01',
+      value: 200.30,
+      date: DateTime.now(),
+    ),
+  ];
+
+  _addTransaction(String tittle, double value) {
+    final newTransaction = Transaction(
+      id: Random().nextDouble().toString(),
+      title: tittle,
+      value: value,
+      date: DateTime.now(),
+    );
+    setState(() {
+      _transactions.add(newTransaction);
+      });
+  }
+
+  _openTransactionFormModal(BuildContext context) {
+    showModalBottomSheet(
+      context: context, 
+      builder: (_) {
+        return TransactionForm(null);
+      });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +67,7 @@ class MyHomePage extends StatelessWidget {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.add),
-            onPressed: () {},
+            onPressed: () => _openTransactionFormModal(context),
           )
         ],
       ),
@@ -37,13 +82,13 @@ class MyHomePage extends StatelessWidget {
                 elevation: 5,
               ),
             ),
-            TransactionUser(),
+            TransactionList(_transactions),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () => _openTransactionFormModal(context),
       ),
     );
   }
