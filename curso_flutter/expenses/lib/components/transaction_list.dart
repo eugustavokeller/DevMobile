@@ -19,14 +19,15 @@ class TransactionList extends StatelessWidget {
             child: Row(
               children: <Widget>[
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                  margin:
+                      const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                   decoration: BoxDecoration(
                     border: Border.all(
                       color: Theme.of(context).primaryColor,
                       width: 2,
                     ),
                   ),
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   child: Text(
                     'R\$ ${tr.value.toStringAsFixed(2)}',
                     style: TextStyle(
@@ -38,25 +39,17 @@ class TransactionList extends StatelessWidget {
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      child: Text(
-                        tr.title,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                          color: Colors.black,
-                        ),
-                      ),
+                  children: <Widget>[
+                    Text(
+                      tr.title,
+                      style: Theme.of(context).textTheme.headline6,
                     ),
-                    Container(
-                      child: Text(
-                        DateFormat('d MMM y').format(tr.date),
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 117, 117, 117),
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                        ),
+                    Text(
+                      DateFormat('d MMM y').format(tr.date),
+                      style: const TextStyle(
+                        color: Color.fromARGB(255, 117, 117, 117),
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ],
