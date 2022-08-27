@@ -4,13 +4,15 @@ import './components/transaction_form.dart';
 import 'models/transaction.dart';
 import 'dart:math';
 
-main() => runApp(ExpansesApp());
+main() => runApp(const ExpansesApp());
 
 class ExpansesApp extends StatelessWidget {
+  const ExpansesApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MyHomePage(),
+      home: const MyHomePage(),
       theme: ThemeData(
           primarySwatch: Colors.purple,
           accentColor: Colors.amber,
@@ -34,6 +36,8 @@ class ExpansesApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -80,12 +84,12 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Despesas Pessoais',
         ),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.add),
+            icon: const Icon(Icons.add),
             onPressed: () => _openTransactionFormModal(context),
           )
         ],
@@ -97,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               child: Card(
                 color: Theme.of(context).primaryColor,
-                child: Text('Gráfico'),
+                child: const Text('Gráfico'),
                 elevation: 5,
               ),
             ),
@@ -106,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () => _openTransactionFormModal(context),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
