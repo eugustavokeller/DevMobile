@@ -20,18 +20,24 @@ class Chart extends StatelessWidget {
         bool sameMonth = recentTransaction[i].date.month == weekDay.month;
         bool sameYear = recentTransaction[i].date.year == weekDay.year;
 
-        if()
+        if(sameDay && sameMonth && sameYear) {
+          totalSum += recentTransaction[i].value;
+        }
       }
+
+      print(DateFormat.E().format(weekDay)[0]);
+      print(totalSum);
 
       return {
         'day': DateFormat.E().format(weekDay)[0],
-        'value': 9.99,
+        'value': totalSum,
       };
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    groupedTransactions;
     return Card(
       elevation: 6,
       margin: const EdgeInsets.all(20),
